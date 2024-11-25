@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <meta name="author" content="Kovács Ákos">
+    <meta name="copyright" content="Kovács Ákos">
+    <meta name="description" content="A világ 4 legmagasabb hegyének, jellemzői és érdekességei.">
+    <link rel="icon" type="image/x-icon" href="pic/favicon.ico">
+    <title>A legmagasabb hegycsúcsok</title>
+    
+</head>
+<body>
+    <header>A világ legmagasabb hegycsúcsai
+    <h3>Utiköltség kalkulátor</h3></header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html"  id="naveverest"> Mount Everest</a></li>
+            <li><a href="k2.html" id="navk2" > K2</a></li>
+            <li><a href="kengchenjunga.html" id="navkang"> Kangchenjunga</a></li>
+            <li><a href="Lhotse.html" id="navlhotse"> Lhotse</a></li>
+            <li><a href="#" id="kalk"> Utiköltség kalkulátor</a></li>
+       </ul>
+    </nav>
+    <div class="kontener">
+        
+    <article>
+        <h2>------ITT LESZ A SZAMOLO------</h2><br><br>
+
+
+        <h2>Egyedi árajánlatkérés</h2>
+        <form method="post" action="https://rf.uni-corvinus.hu/webfejlesztes/receive.php">
+            <label for="vezeteknev">Vezetéknév: </label> 
+            <input type="text" name="vezeteknev" id="vezeteknev" required> <br>
+
+            <label for="keresztnev">Keresztnév: </label> 
+            <input type="text" name="keresztnev" id="keresztnev" required> <br>
+
+            <label for="szuldatum">Születési dátum: </label> 
+            <input type="date" name="szuldatum" id="szuldatum" required> <br>
+
+            <label for="nem">Nem: </label> 
+            <select name="nem" required>
+                <option value="ferfi">Férfi</option>
+                <option value="no">Nő</option>
+                <option value="Egyéb">Egyéb</option>
+            </select> <br>
+
+            <label for="email">E-mail: </label> 
+            <input type="email" name="email" id="email" placeholder="pelda@gmail.com" required> <br>
+
+            <label for="phone">Telefonszám: </label> 
+            <input type="tel" name="telefonszam" id="telefonszam" placeholder="+36301231234" required minlength="12" maxlength="12"> <br>
+
+            <label for="hegy">Melyik hegyre szeretnél felmászni? </label> 
+            <select name="hegy">
+                <option value="everest">Mount Everest</option>
+                <option value="k2">K2</option>
+                <option value="kangchenjunga">Kangchenjunga</option>
+                <option value="lhotse">Lhotse</option>
+            </select> <br>
+
+            <label for="legmagasabbhegye">Legmagasabb sikeres csúcstámadás: </label>
+            <input type="number" name="legmagasabbhegye" id="legmagasabbhegye" min="6000" max="8848" step="100" required> méter <br>
+
+            <label for="napisakk">Van magashegyi felszerelésed? </label>
+            <input type="radio" name="felszereles" value="True">Van  <input type="radio" name="felszereles" checked value="False">Nincsen <br>
+
+            <label for="targyak"><b>Extra szolgáltatások</b></label>  
+            <br><input type="checkbox" name="taborbajutas"> Alaptáborba érkezés helikopterrel
+            <br><input type="checkbox" name="falmaszas"> Alap falmászás oktatás
+            <br><input type="checkbox" name="felszereles"> Felszerelés bérlés
+            <br><input type="checkbox" name="oxigenpalack"> Oxigénpalack
+            <br><input type="checkbox" name="sator"> Sátor bérlés
+            <br>
+
+            <label for="keres">Van valami egyedi kérésed? </label><br>
+            <textarea name="keres" id="keres" rows="7" cols="35" placeholder="pl: csoportos utaztatás"></textarea> <br>
+
+            
+
+            <input type="submit" name="submit" value="Küldés" id="submit">
+            <input type="reset" name="reset" id="visszaallitas" value="Alaphelyzet">
+        </form>
+    </article>
+
+    </div>
+    
+    <footer>Az oldal kizárólag oktatási célra készült! Kovács Ákos © 2024 </footer>
+
+</body>
+</html>
