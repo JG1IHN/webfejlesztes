@@ -29,27 +29,21 @@ function minusz()
 function katt() {
     let ossz=0;
     let osszegek="A végössszeg így tevődik össze:<br><br>";
-
-    let indexek=[1,2,3,4,5,6];
     let repuloarak=[230000,848000,610000,180000,456000,556000]; //Európa, Dél-Amerika, Észak-Amerika, Ázsia, Afrika, Ausztrália
     let hegyarak=[10000000,12000000,8000000,9000000]; //Everest, k2, Kangchenjunga, Lhotse
-    let hegyek=["Mount Everest", "K2", "Kangchenjunga", "Lhotse"];
+    let hegyek=["Mount Everest-re", "K2-re", "Kangchenjunga-ra", "Lhotse-re"];
+    let kontinensek=["Európába", "Dél-Amerikába", "Észak-Amerikába", "Ázsiába", "Afrikába", "Ausztráliába"];
    
     
     //Hegycsúcs választás
     if (document.getElementById("hegy").selectedIndex==0){
         alert("Nem választott hegycsúcsot!");
     }
-    indexek
-    for(i in indexek)
+    for(i=0;i<kontinensek.length;i++)
     {
-        
-        let egyeni=false
-        let alap=false
-        if (document.getElementById("hegy").selectedIndex==indexek[i]){
+        if (document.getElementById("hegy").selectedIndex==i+1){
             ossz+=hegyarak[i];
-            osszegek+=`A ${(hegyek[i])} hegy alapdíja: ${(hegyarak[i]).toLocaleString('hu-HU')}FT<br>`;
-    
+            osszegek+=`A ${(hegyek[i])} az expedíció alapdíja: ${(hegyarak[i]).toLocaleString('hu-HU')}FT<br>`;
         }
     }
         if(document.getElementById("alaptabor").checked)//alaptabor
@@ -68,19 +62,20 @@ function katt() {
         osszegek+=`A felszerelés 100 000FT<br>`;
 
     } 
+
     //Kontinens választás
     if (document.getElementById("kontinens").selectedIndex==0){
         alert("Nem választott kiinduló kontinenst");
         
     }
-    for(i in indexek)
+    for(i=0;i<kontinensek.length;i++)
     {
-        if (document.getElementById("kontinens").selectedIndex==indexek[i]){
+        if (document.getElementById("kontinens").selectedIndex==i+1){
             ossz+=repuloarak[i];
-            osszegek+=`A repülőút: ${(repuloarak[i]).toLocaleString('hu-HU')}FT<br>`;
-            
+            osszegek+=`A repülőút ${kontinensek[i]}: ${(repuloarak[i]).toLocaleString('hu-HU')}FT<br>`;         
         }
     }
+    
     //letszam
     let letszam=document.getElementById("ember").value;
         ossz=ossz*letszam; 

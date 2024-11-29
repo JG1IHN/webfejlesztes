@@ -138,7 +138,7 @@ form{
     min-width: 200px;
 }
 
-#kepgelleria{
+#kepgalleria{
     padding: 40px;
     order: 1;
 }
@@ -189,8 +189,8 @@ form{
     figure{
         flex-basis: 48%;
     }
-    #kalkulator{
-        flex-basis: 70%;
+    #kalkulator,#kepgalleria{
+        flex-basis: 80%;
     }
     
 }
@@ -207,7 +207,7 @@ form{
     figure{
         flex-basis: 27%;
     }
-    #kalkulator{
+    #kalkulator,#kepgalleria{
         flex-basis: 70%;
     }
     

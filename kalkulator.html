@@ -32,13 +32,13 @@
         <form action="#" >
             <label for="hegy">Melyik hegyre szeretnél felmászni? </label> 
             <select name="hegy" id="hegy">
-                <option id="valaszt">Válassz</option>
+                <option id="valasz">Válassz</option>
                 <option id="everest">Mount Everest</option>
                 <option id="k2">K2</option>
                 <option id="kangchenjunga">Kangchenjunga</option>
                 <option id="lhotse">Lhotse</option>
             </select><br>
-            <label for="kontinens">Melyik kontinensről repül? </label> 
+            <label for="kontinens">Melyik kontinensről szeretne repülni? </label> 
             <select name="kontinens" id="kontinens">
                 <option id="valaszt">Válassz</option>
                 <option id="eu">Európa</option>
@@ -52,9 +52,9 @@
             <br>
 
             <label for="csoprot">Más csoporttal szeretnél együtt mászni?</label><br>
-            <input type="radio" name="felszereles" id="nem">Nem, egyénileg <input type="radio" name="felszereles" id="igen" checked>Igen, csoporttal(javasolt) <br>
+            <input type="radio" name="felszereles" id="csoprot">Nem, egyénileg <input type="radio" name="felszereles" checked>Igen, csoporttal(javasolt) <br>
             
-            <label for="targyak"></label>  
+            <label for="felsz"></label>  
             <input type="checkbox" name="felsz" id="felsz"> Felszerelésbérlés
             <br>
 
@@ -84,7 +84,8 @@
             <input type="date" name="szuldatum" id="szuldatum" required> <br>
 
             <label for="nem">Nem: </label> 
-            <select name="nem" required>
+            <select name="nem" required id="nem">
+                <option value="">Válassz</option>
                 <option value="ferfi">Férfi</option>
                 <option value="no">Nő</option>
                 <option value="Egyéb">Egyéb</option>
@@ -93,7 +94,7 @@
             <label for="email">E-mail: </label> 
             <input type="email" name="email" id="email" placeholder="pelda@gmail.com" required> <br>
 
-            <label for="phone">Telefonszám: </label> 
+            <label for="telefonszam">Telefonszám: </label> 
             <input type="tel" name="telefonszam" id="telefonszam" placeholder="+36301231234" required minlength="12" maxlength="12"> <br>
 
             <label for="hegy">Melyik hegyre szeretnél felmászni? </label> 
@@ -108,10 +109,10 @@
             <input type="number" name="legmagasabbhegye" id="legmagasabbhegye" min="6000" max="8848" step="100" required> méter <br>
 
             <label for="felszereles">Van magashegyi felszerelésed? </label>
-            <input type="radio" name="felszereles" value="True">Van  <input type="radio" name="felszereles" checked value="False">Nincsen <br>
+            <input type="radio" name="felszereles" value="True" id="felszereles">Van  <input type="radio" name="felszereles" checked value="False">Nincsen <br>
 
             <label for="targyak"><b>Extra szolgáltatások</b></label>  
-            <br><input type="checkbox" name="taborbajutas"> Alaptáborba érkezés helikopterrel
+            <br><input type="checkbox" name="taborbajutas" id="targyak"> Alaptáborba érkezés helikopterrel
             <br><input type="checkbox" name="falmaszas"> Alap falmászás oktatás
             <br><input type="checkbox" name="felszereles"> Felszerelés bérlés
             <br><input type="checkbox" name="oxigenpalack"> Oxigénpalack
