@@ -9,4 +9,4 @@
 
 5. A "Roboto mono" Google fonttípust használtam az egész projektben.
 
-6.A ".toLocaleString('hu-HU')" függvény az objektum ezres tagolását adja vissza.
+6. A ".toLocaleString('hu-HU')" függvény az objektum ezres tagolását adja vissza.
