@@ -9,6 +9,45 @@
     <meta name="description" content="A világ 4 legmagasabb hegyének, jellemzői és érdekességei.">
     <link rel="icon" type="image/x-icon" href="pic/favicon.ico">
     <title>A legmagasabb hegycsúcsok</title>
+    <script src="javascript/jquery-3.7.1.js"></script>
+    <script src="jquery-validation-1.19.5/dist/jquery.validate.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#urlap").validate({ 
+                rules: {
+                    vezeteknev: "required",
+                    keresztnev: "required",
+                    szuldatum: "required",
+                    email: {
+                        email: true,
+                        required: true
+                    },
+                    legmagasabbhegye: {
+                        required: true,
+                        min: 6000,
+                        max: 8848,
+                    },
+                    telefonszam: {
+                        required: true,
+                        minlength: 12,
+                        maxlength: 12
+                    },
+                },
+                messages: {
+                    vezeteknev:" Nem adtad meg a vezetéknevedet!",
+                    keresztnev:" Nem adtad meg a keresztnevedet!",
+                    szuldatum:" Nem választottál születési dátumot!",
+                    email: " Valós email címet adj meg!",
+                    legmagasabbhegye:{
+                        required: " Nem adtál meg semmit!",
+                        min: " Legalább 6000 méternek kell lennie!",
+                        max: " Nincsen ilyen magas hegy!"
+                    },
+                    telefonszam: " Valós telefonszámot add meg!",
+                },
+            });
+        });
+    </script>
     
 </head>
 <body id="test">
@@ -51,8 +90,8 @@
             <input type="checkbox" name="alaptabor" id="alaptabor"> Csak az alaptáborig tartson az expedíció
             <br>
 
-            <label for="csoprot">Más csoporttal szeretnél együtt mászni?</label><br>
-            <input type="radio" name="felszereles" id="csoprot">Nem, egyénileg <input type="radio" name="felszereles" checked>Igen, csoporttal(javasolt) <br>
+            <label for="csoport">Más csoporttal szeretnél együtt mászni?</label><br>
+            <input type="radio" name="felszereles" id="csoport">Nem, egyénileg <input type="radio" name="felszereles" checked>Igen, csoporttal(javasolt) <br>
             
             <label for="felsz"></label>  
             <input type="checkbox" name="felsz" id="felsz"> Felszerelésbérlés
@@ -70,32 +109,30 @@
             <p id="osszegek"></p>
             <p id="vege">Végösszeg: 0 FT(forint) ≈ 0 $(dollár)</p>
         </form>
-
-
+        <hr>
         <h2>Tényleges árajánlatkérés</h2>
-        <form method="post" action="https://rf.uni-corvinus.hu/webfejlesztes/receive.php">
+        <form method="post" action="https://rf.uni-corvinus.hu/webfejlesztes/receive.php" id="urlap" novalidate="novalidate">
             <label for="vezeteknev">Vezetéknév: </label> 
-            <input type="text" name="vezeteknev" id="vezeteknev" required> <br>
+            <input type="text" name="vezeteknev" id="vezeteknev"> <br>
 
             <label for="keresztnev">Keresztnév: </label> 
-            <input type="text" name="keresztnev" id="keresztnev" required> <br>
+            <input type="text" name="keresztnev" id="keresztnev"> <br>
 
             <label for="szuldatum">Születési dátum: </label> 
-            <input type="date" name="szuldatum" id="szuldatum" required> <br>
+            <input type="date" name="szuldatum" id="szuldatum"> <br>
 
             <label for="nem">Nem: </label> 
-            <select name="nem" required id="nem">
-                <option value="">Válassz</option>
+            <select name="nem" id="nem">
                 <option value="ferfi">Férfi</option>
                 <option value="no">Nő</option>
                 <option value="Egyéb">Egyéb</option>
             </select> <br>
 
             <label for="email">E-mail: </label> 
-            <input type="email" name="email" id="email" placeholder="pelda@gmail.com" required> <br>
+            <input type="email" name="email" id="email" placeholder="pelda@gmail.com"> <br>
 
             <label for="telefonszam">Telefonszám: </label> 
-            <input type="tel" name="telefonszam" id="telefonszam" placeholder="+36301231234" required minlength="12" maxlength="12"> <br>
+            <input type="tel" name="telefonszam" id="telefonszam" placeholder="+36301231234" minlength="12" maxlength="12"> <br>
 
             <label for="hegy">Melyik hegyre szeretnél felmászni? </label> 
             <select name="hegy">
@@ -105,8 +142,8 @@
                 <option value="lhotse">Lhotse</option>
             </select> <br>
 
-            <label for="legmagasabbhegye">Legmagasabb sikeres csúcstámadás: </label>
-            <input type="number" name="legmagasabbhegye" id="legmagasabbhegye" min="6000" max="8848" step="100" required> méter <br>
+            <label for="legmagasabbhegye">Legmagasabb sikeres csúcstámadás(méter):</label>
+            <input type="number" name="legmagasabbhegye" id="legmagasabbhegye" min="6000" max="8848" step="100"><br>
 
             <label for="felszereles">Van magashegyi felszerelésed? </label>
             <input type="radio" name="felszereles" value="True" id="felszereles">Van  <input type="radio" name="felszereles" checked value="False">Nincsen <br>
@@ -121,9 +158,7 @@
 
             <label for="keres">Van valami egyedi kérésed? </label><br>
             <textarea name="keres" id="keres" rows="7" cols="35" placeholder="pl: csoportos utaztatás"></textarea> <br>
-
             
-
             <input type="submit" name="submit" value="Küldés" id="submit">
             <input type="reset" name="reset" id="visszaallitas" value="Alaphelyzet">
         </form>
@@ -132,7 +167,7 @@
     </div>
     
     <footer>Az oldal kizárólag oktatási célra készült! Kovács Ákos © 2024 </footer>
-    <script src="script.js">
+    <script src="javascript/script.js">
     </script>
 </body>
 </html>

@@ -116,6 +116,9 @@ form{
     line-height: 2em;
 }
 
+label.error {
+    color:red;}
+
 #submit,#visszaallitas,#szamol,#plusz,#minusz{
     color: white;
     background-color: #4d7092;
