@@ -53,7 +53,6 @@
 <body id="test">
     <header>A világ legmagasabb hegycsúcsai
     <h3>Utiköltség kalkulátor</h3></header>
-    
     <nav>
         <ul>
             <li><a href="index.html"  id="naveverest"> Mount Everest</a></li>
@@ -66,7 +65,8 @@
     <div class="kontener">
         
     <article id="kalkulator">
-        <h4>Figyelem!<br>A magashegyi hegymászás nem kezdőnek való,<br>hanem profi, tapasztalt mászóknak, ezért aki nem<br>járt 6000 méternél magasabb csúcson nem kérhet tényleges árajánlatot!</h4>
+        <h5>A kalkulátor csak közelítő arakat tud meghatározni, a tényleges árhoz ajanlatkérés szükséges!</h5>
+        
         <h2>Utiköltség kalkulátor</h2>
         <form action="#" >
             <label for="hegy">Melyik hegyre szeretnél felmászni? </label> 
@@ -77,6 +77,7 @@
                 <option id="kangchenjunga">Kangchenjunga</option>
                 <option id="lhotse">Lhotse</option>
             </select><br>
+            
             <label for="kontinens">Melyik kontinensről szeretne repülni? </label> 
             <select name="kontinens" id="kontinens">
                 <option id="valaszt">Válassz</option>
@@ -86,30 +87,28 @@
                 <option id="azsia">Ázsia</option>
                 <option id="afrika">Afrika</option>
                 <option id="aust">Ausztrália</option>
-            </select> <br>
+            </select> <br><br>
             <input type="checkbox" name="alaptabor" id="alaptabor"> Csak az alaptáborig tartson az expedíció
             <br>
 
-            <label for="csoport">Más csoporttal szeretnél együtt mászni?</label><br>
-            <input type="radio" name="felszereles" id="csoport">Nem, egyénileg <input type="radio" name="felszereles" checked>Igen, csoporttal(javasolt) <br>
-            
             <label for="felsz"></label>  
             <input type="checkbox" name="felsz" id="felsz"> Felszerelésbérlés
-            <br>
+            <br><br>
 
-            
+            <label for="csoport">Más csoporttal szeretnél együtt mászni?</label><br>
+            <input type="radio" name="felszereles" id="csoport">Nem, egyénileg <input type="radio" name="felszereles" checked>Igen, csoporttal(javasolt) <br>
+            <br>
             
             <label for="ember">Mekkora a létszám?</label>
-            <input type="number" name="felszereles" id="ember" value="1">  <input type="button" value="+" id="plusz">  <input type="button" value="-" id="minusz"><br><br>
-
-            
-            
-            
+            <input type="number" name="felszereles" id="ember" value="1" min="1" max="10">  <input type="button" value="+" id="plusz">  <input type="button" value="-" id="minusz"><br><br>
+ 
             <input type="button" value="Végösszeg kiszámolása" id="szamol">
             <p id="osszegek"></p>
             <p id="vege">Végösszeg: 0 FT(forint) ≈ 0 $(dollár)</p>
         </form>
         <hr>
+
+        <h4 id="figyelem">Figyelem!<br>A magashegyi hegymászás nem kezdőnek való,<br>hanem profi, tapasztalt mászóknak, ezért aki nem<br>járt 6000 méternél magasabb csúcson nem kérhet tényleges árajánlatot!</h4>
         <h2>Tényleges árajánlatkérés</h2>
         <form method="post" action="https://rf.uni-corvinus.hu/webfejlesztes/receive.php" id="urlap" novalidate="novalidate">
             <label for="vezeteknev">Vezetéknév: </label> 
@@ -163,9 +162,7 @@
             <input type="reset" name="reset" id="visszaallitas" value="Alaphelyzet">
         </form>
     </article>
-
     </div>
-    
     <footer>Az oldal kizárólag oktatási célra készült! Kovács Ákos © 2024 </footer>
     <script src="javascript/script.js">
     </script>
