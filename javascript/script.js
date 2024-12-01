@@ -32,7 +32,7 @@ function katt() {
     let repuloarak=[230000,848000,610000,180000,456000,556000]; //Európa, Dél-Amerika, Észak-Amerika, Ázsia, Afrika, Ausztrália
     let hegyarak=[10000000,12000000,8000000,9000000]; //Everest, k2, Kangchenjunga, Lhotse
     let hegyek=["Mount Everest-re", "K2-re", "Kangchenjunga-ra", "Lhotse-re"];
-    let kontinensek=["Európába", "Dél-Amerikába", "Észak-Amerikába", "Ázsiába", "Afrikába", "Ausztráliába"];
+    let kontinensek=["Európából", "Dél-Amerikából", "Észak-Amerikából", "Ázsiából", "Afrikából", "Ausztráliából"];
    
     
     //Hegycsúcs választás
@@ -59,7 +59,7 @@ function katt() {
     //felszerelés
     if (document.getElementById("felsz").checked){
         ossz+=100000;
-        osszegek+=`A felszerelés 100 000FT<br>`;
+        osszegek+=`A felszerelés 100 000FT/fő<br>`;
 
     } 
 
@@ -72,7 +72,7 @@ function katt() {
     {
         if (document.getElementById("kontinens").selectedIndex==i+1){
             ossz+=repuloarak[i];
-            osszegek+=`A repülőút ${kontinensek[i]}: ${(repuloarak[i]).toLocaleString('hu-HU')}FT<br>`;         
+            osszegek+=`A repülőút ${kontinensek[i]}: ${(repuloarak[i]).toLocaleString('hu-HU')}FT/fő<br>`;         
         }
     }
     
