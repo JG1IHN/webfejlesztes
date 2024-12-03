@@ -16,6 +16,10 @@ body{
     font-family: "Roboto Mono", monospace;
 }
 
+.current{
+    border: solid black 1.5px;
+}
+
 header{
     font-size: xx-large;
     text-align: center;
